@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org.1999.xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Countries App</title>
+</head>
+<body>
+Welcome to Countries App!!!
+<table>
+	<tr th:each="country : ${countries}">
+		<td><a th:href ="@{/country_info/{id}(id=${country.id})}" th:text="${country.name}"></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<td><a th:href ="@{/edit_population/{id}(id=${country.id})}">EDIT</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<td><a th:href ="@{/delete/{id}(id=${country.id})}">DELETE</a>
+	</tr>
+</table>
+<a th:href="@{/add_country}">ADD COUNTRY</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org.1999.xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Population</title>
+</head>
+<body>
+	<form th:action="@{/save_edit}" th:object="${country}" method="post">
+		<div>
+			ID: <input type="text" th:field="*{id}" readonly="readonly" />
+		</div>
+		<div>
+			Name: <input type="text" th:field="*{name}" readonly="readonly" />
+		</div>
+		<div>
+			Capital: <input type="text" th:field="*{capital}" readonly="readonly" />
+		</div>
+		<div>
+			Population: <input type="text" th:field="*{population}" />
+			<span style="color: red;" th:if="${#fields.hasErrors('population')}" th:error="*{population}">Population Error</span>
+		</div>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org.1999.xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Country Details</title>
+</head>
+<body>
+	<table>
+	<tr>
+		<td>NAME:        </td>
+		<td th:text="${country.name}"></td>
+	</tr>
+	<tr>
+		<td>CAPITAL:     </td>
+		<td th:text="${country.capital}"></td>
+	</tr>
+	<tr>
+		<td>POPULATION:  </td>
+		<td th:text="${country.population}"></td>
+	</tr>
+	</table>
+</body>
+</html>
